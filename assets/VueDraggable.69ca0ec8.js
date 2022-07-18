@@ -1,1 +1,0 @@
-import{_ as e}from"./index.1698182c.js";import{o as r,s as a}from"./vendor.3f72d0a7.js";const o={},c={class:"container"};function t(s,n){return r(),a("div",c,"VueDraggable")}var i=e(o,[["render",t]]);export{i as default};
