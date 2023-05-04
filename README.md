@@ -6,21 +6,22 @@
 ## Install
 
 ```
-npm install
+yarn
 ```
 
 ## Run
 
 ```
-npm run dev
+yarn dev
 ```
 
 ## Build
 
 ```
-npm run build
+yarn build
 ```
 
 ## Auth
 username: admin
+
 password: 12345678
