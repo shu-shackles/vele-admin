@@ -8,7 +8,7 @@ const homeRoutes: AppRouteRecordRaw[] = [
     component: LAYOUT,
     redirect: "/home/index",
     meta: {
-      title: "分析页",
+      title: "首页",
       icon: "House",
       menuNum: 10,
     },
@@ -18,7 +18,7 @@ const homeRoutes: AppRouteRecordRaw[] = [
         name: "Home",
         component: () => import("/@/views/home/Home.vue"),
         meta: {
-          title: "分析页",
+          title: "首页",
           hideMenu: true,
         },
       },

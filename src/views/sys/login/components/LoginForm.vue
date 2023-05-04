@@ -1,8 +1,8 @@
 <template>
   <el-form :model="formData" ref="formRef" label-width="60px">
-    <el-form-item label="用户名" prop="username">
+    <el-form-item label="用户名" prop="identifier">
       <el-input
-        v-model="formData.username"
+        v-model="formData.identifier"
         placeholder="please enter username"
       />
     </el-form-item>
@@ -24,13 +24,14 @@
 
 <script lang="ts">
 import { ElMessage } from "element-plus";
+import router from "/@/router";
 import { userStore } from "/@/store/modules/user";
 
 export default defineComponent({
   setup() {
     const formData = reactive({
-      username: "admin",
-      password: "123456",
+      identifier: "",
+      password: "",
     });
     const loading = ref(false);
     const formRef = ref();
@@ -39,17 +40,19 @@ export default defineComponent({
       loading.value = true;
       formRef.value.validate(async (valid: any) => {
         if (valid) {
-          await userStore.loginAction(formData as any);
-        } else {
-          ElMessage.error("用户名或密码错误！");
-          return false;
+          const ans = await userStore.loginAction(formData as any);
+          console.log(ans);
+          if (!ans) {
+            ElMessage.error('用户名或密码错误')
+          }
         }
         loading.value = false;
       });
     }
 
     function resetForm() {
-      formRef.value.resetFields();
+      formData.identifier = '';
+      formData.password = '';
     }
 
     return { formData, formRef, loading, submitForm, resetForm };

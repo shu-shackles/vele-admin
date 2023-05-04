@@ -3,38 +3,30 @@ import { LAYOUT } from "../baseRoute";
 
 const tableRoutes: AppRouteRecordRaw[] = [
   {
-    path: "/table",
-    name: "Table",
+    path: "/food",
+    name: "food",
     component: LAYOUT,
-    redirect: "/table/normal",
+    redirect: "/food/category",
     meta: {
-      title: "表格",
-      icon: "SetUp",
-      menuNum: 30,
+      title: "菜单管理",
+      icon: "Food",
+      menuNum: 20,
     },
     children: [
       {
-        path: "normal",
-        name: "NormalTable",
-        component: () => import("/@/views/table/NormalTable.vue"),
+        path: "category",
+        name: "category",
+        component: () => import("/@/views/food/category.vue"),
         meta: {
-          title: "普通表格",
+          title: "品类管理",
         },
       },
       {
-        path: "tree",
-        name: "TreeTable",
-        component: () => import("/@/views/table/TreeTable.vue"),
+        path: "menu",
+        name: "menu",
+        component: () => import("/@/views/food/menu.vue"),
         meta: {
-          title: "树型表格",
-        },
-      },
-      {
-        path: "use",
-        name: "UseTable",
-        component: () => import("/@/views/table/UseTable.vue"),
-        meta: {
-          title: "UseTable",
+          title: "菜品管理",
         },
       },
     ],

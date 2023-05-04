@@ -3,7 +3,7 @@
     <el-dropdown style="height: 100%">
       <div class="el-dropdown-link">
         <el-icon><UserFilled /></el-icon>
-        <span class="user-name">{{ userInfo.username }}</span>
+        <span class="user-name">admin</span>
       </div>
       <template #dropdown>
         <el-dropdown-menu>

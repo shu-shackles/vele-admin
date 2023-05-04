@@ -3,22 +3,22 @@ import { LAYOUT } from "../baseRoute";
 
 const homeRoutes: AppRouteRecordRaw[] = [
   {
-    path: "/icon",
-    name: "Icon",
+    path: "/order",
+    name: "Order",
     component: LAYOUT,
-    redirect: "/icon/index",
+    redirect: "/order/index",
     meta: {
-      title: "图标",
-      icon: "Eleme",
-      menuNum: 10,
+      title: "订单管理",
+      icon: "list",
+      menuNum: 20,
     },
     children: [
       {
         path: "index",
-        name: "Icon",
-        component: () => import("/@/views/icon/Icon.vue"),
+        name: "Order",
+        component: () => import("/@/views/order/index.vue"),
         meta: {
-          title: "图标",
+          title: "订单管理",
           hideMenu: true,
         },
       },

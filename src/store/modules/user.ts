@@ -38,7 +38,7 @@ export default class User extends VuexModule {
   }
 
   get getUserInfoState() {
-    return this.userInfo.username ? this.userInfo : getCache(USER_INFO_KEY);
+    return this.userInfo.identifier;
   }
 
   @Mutation
@@ -73,9 +73,7 @@ export default class User extends VuexModule {
 
   @Action
   async getUserInfoAction() {
-    const userInfo: any = await getUserInfo({
-      token: "token__token",
-    });
+    const userInfo: any = await getUserInfo();
     this.commitUserInfo(userInfo);
     return userInfo;
   }

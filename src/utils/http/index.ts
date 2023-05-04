@@ -76,8 +76,8 @@ export class Http {
       !ignoreCancel && axiosCanceler.addPending(config);
 
       // 配置token
-      config.headers.Authorization = userStore.getTokenState || "";
-
+      config.headers.Authorization = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjgxODIxMTcxLCJleHAiOjE2ODQ0MTMxNzF9.r2cF7uQmneg7tXqug4JT2Uc1ukol8jf1A3AHukB19k0";
+      // config.headers.Authorization = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjgxOTkyMzE3LCJleHAiOjE2ODQ1ODQzMTd9.2Wiaejaxu_8wNkFMMt1joeXWLkms6M8VgYZ-u0lOfvc"
       return config;
     }, undefined);
 
@@ -176,14 +176,14 @@ export class Http {
 
 function createHttp(config: Partial<CreateAxiosOptions> = {}) {
   return new Http({
-    baseURL: "/mock-api/",
+    baseURL: "/api",
     timeout: 10000,
     withCredentials: true,
     headers: {
       "Content-Type": ContentTypeEnum.JSON,
     },
     requestOptions: {
-      isTransformRequestResult: true, // 是否对返回数据进行处理
+      isTransformRequestResult: false, // 是否对返回数据进行处理
       formatDate: true, // 格式化提交参数时间
       apiUrl: "", // 接口地址
       errorMessageMode: RrrorMessageEnum.MESSAGE, // 错误消息提示

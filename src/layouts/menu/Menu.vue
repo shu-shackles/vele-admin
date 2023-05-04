@@ -1,7 +1,7 @@
 <template>
   <div class="menu-container">
     <div class="app-title" :style="getTitleStyle" @click="$router.push('/')">
-      <img src="/src/assets/svg/logo.svg" />
+      <img src="/src/assets/logo.png" />
       <span v-if="!isCollapse">{{ appTitle }}</span>
     </div>
     <div class="menu">

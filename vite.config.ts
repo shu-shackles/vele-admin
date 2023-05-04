@@ -22,10 +22,10 @@ export default ({ mode, command }: ConfigEnv): UserConfig => {
     },
     server: {
       proxy: {
-        "/mock-api": {
-          target: "http://localhost:3000/",
+        "/api": {
+          target: "https://www.yueyingxuan.online",
           changeOrigin: true,
-          rewrite: (path: any) => path.replace(/^\/test/, ""),
+          rewrite: (path: any) => path.replace(/^\/api/, ""),
         },
       },
     },

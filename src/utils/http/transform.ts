@@ -34,8 +34,8 @@ export function beforeRequestHook(
   if (config.method?.toUpperCase() === RequestEnum.GET) {
     if (!isString(params)) {
       // 是否从缓存中拿数据，如果不，则给 get 请求加上时间戳参数
-      !isCacheData &&
-        (config.params = Object.assign(params || {}, createNow(false)));
+      // !isCacheData &&
+      //   (config.params = Object.assign(params || {}, createNow(false)));
     } else {
       // 兼容restful风格
       config.url =
@@ -209,7 +209,7 @@ export function responseInterceptorsCatch(error: any) {
 function checkStatus(status: number, msg?: string) {
   switch (status) {
     case 400:
-      ElMessage.error(msg);
+      // ElMessage.error(msg);
       break;
     case 401:
       ElMessage.error(errorMessage["401"]);
